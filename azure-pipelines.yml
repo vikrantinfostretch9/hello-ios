@@ -13,15 +13,5 @@ steps:
     useXcpretty: 'false'
     args: '-archivePath $(agent.buildDirectory)/HelloiOS'
 
-- task: ArchiveFiles@2
-  displayName: 'Package .xcarchive into a zip file'
-  inputs:
-    rootFolderOrFile: '$(agent.buildDirectory)/HelloiOS.xcarchive/'
-    archiveFile: '$(build.artifactStagingDirectory)/HelloiOS.xcarchive.zip'
 
-- task: PublishBuildArtifacts@1
-  inputs:
-    pathToPublish: '$(build.artifactStagingDirectory)/HelloiOS.xcarchive.zip'
-    artifactName: 'xcarchive-files'
-    artifactType: 'container'
 
